@@ -1,4 +1,4 @@
-**Projektuppgift DT211G**
+**Projektuppgift DT211G**<br>
 ***I projektuppgiften för kursen Frontend-baserad webbutveckling<br>
 har en sökbar karta med hjälp av Leaflet och Nominatim skapats.<br>
 Utöver detta har väderdata från tomorrow.io lästs in.<br>
