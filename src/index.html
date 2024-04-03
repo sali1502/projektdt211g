@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moment 3-5</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="css/main.scss">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+
+
+
+<body>
+  <div class="grid-container">
+
+    <header>
+    </header>
+
+    <main>
+      <h1>Plan your trip with us</h1>
+      <p>Get the local temperature forecast for your destination</p>
+
+      <div class="space1"></div>
+
+      <div class="image-container">
+        <picture>
+          <source srcset="./images/beach.jpg?as=webp&width=200" type="image/webp">
+          <img src="./images/beach.jpg?width=200" alt="A sundbed and a parasol at a beach">
+        </picture>
+      </div>
+
+      <div class="arrow" id="arrowAnimation"></div>
+
+      <input type="text" id="searchInput" placeholder="Type your destination here">
+      <button id="searchBtn">Search</button>
+
+      <div class="space1"></div>
+
+      <div id="weather"></div>
+
+      <div class="space2"></div>
+
+      <div id="map"></div>
+    </main>
+
+    <footer>
+      <p>Projektuppgift för DT211G.&copy; Åsa Lindskog, 2024.
+      </p>
+    </footer>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,259 @@
+@use 'base';
+@use 'keyframes';
+
+* {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr;
+  grid-gap: 0px;
+  padding: 0px;
+  padding: 0px;
+  width: 100%;
+  max-width: 1512px;
+  margin: auto;
+}
+
+body {
+  background-color: base.$primary-bg;
+  font: 100% base.$font-stack;
+  font-style: normal;
+  text-align: center;
+  font-weight: 400;
+  max-width: 1512px;
+  margin: 0 auto 0 auto;
+}
+
+header {
+  @extend body;
+  height: 5vh;
+}
+
+h1 {
+  font: 100% base.$font-stack;
+  color: base.$primary-heading;
+  font-weight: 400;
+  font-size: 2.4em;
+  font-style: normal;
+  padding-bottom: 2vh;
+  text-align: center;
+  margin: 0 auto 0 auto;
+}
+
+article h2 {
+  @extend h1;
+  color: base.$primary-text;
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 1em;
+  padding-bottom: 2vh;
+  padding-top: 1vh;
+}
+
+p {
+  font: 100% base.$font-stack;
+  color: base.$primary-heading;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4em;
+  margin: 0 auto 0 auto;
+}
+
+article p {
+  @extend p;
+  padding-bottom: 2vh;
+}
+
+footer {
+  @extend body;
+  line-height: 1.6em;
+  height: 5vh;
+  padding-top: 4vh;
+  max-width: 1512px;
+}
+
+footer p {
+  @extend body;
+  font-size: 0.9em;
+  line-height: 1.6em;
+  padding-bottom: 2vh;
+}
+
+#searchInput {
+  margin: 0 auto 0 auto;
+}
+
+#searchBtn {
+  @extend #searchInput;
+}
+
+#weather {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  text-align: center;
+}
+
+#map {
+  height: 450px;
+  width: 100%;
+}
+
+.space1 {
+  height: 3vh;
+}
+
+.space2 {
+  height: 1vh;
+}
+
+img {
+  width: 100%;
+  margin: 0 auto 0 auto;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  max-width: 200px;
+}
+
+// Animering - flygplansikon som rör sig vid hoover, försvinner ur webbläsarfönstret och stannar där
+/* #plane {
+  width: 50px;
+  height: 50px;
+  background-color: base.$primary-bg;
+  text-align: center;
+  padding-top: 2vh;
+  margin: 0 auto 0 auto;
+  animation: movePlaneHover 2s 0s;
+  animation-play-state: paused;
+}
+
+#plane:hover {
+  animation: movePlaneHover 2s 0s;
+  animation-play-state: running;
+}
+*/
+
+//Mixin och animation  - grön pil som rör sig vertikalt
+.arrow {
+  margin: 0 auto;
+  margin-bottom: 1vh;
+  @include base.triangle (16px, base.$dark-green, down);
+  animation: moveArrow 1s 2s 25 alternate both linear;
+}
+
+/* Media querys */
+
+// dark mode
+@media (prefers-color-scheme: dark) {
+
+  body {
+    background-color: base.$primary-bg-darkm !important;
+  }
+
+  h1 {
+    color: base.$primary-heading-darkm !important;
+  }
+
+  article h2 {
+    color: base.$primary-heading-darkm !important;
+  }
+
+  p {
+    color: base.$primary-text-darkm !important;
+  }
+
+  article p {
+    color: base.$primary-text-article-darkm !important;
+  }
+  /* #plane {
+    width: 50px;
+    height: 50px;
+    background-color: base.$primary-bg-darkm;
+    text-align: center;
+    padding-top: 2vh;
+    margin: 0 auto 0 auto;
+    animation: movePlaneHover 2s 0s;
+    animation-play-state: paused;
+  }
+
+  #plane:hover {
+    animation: movePlaneHover 2s 0s;
+    animation-play-state: running;
+  }
+  */
+
+  //Mixin och animation  - grön pil som rör sig vertikalt
+  .arrow {
+    margin: 0 auto;
+    margin-bottom: 1vh;
+    @include base.triangle (16px, base.$primary-text-article-darkm, down);
+    animation: moveArrow 1s 2s 25 alternate both linear;
+  }
+}
+
+// Visar en kolumn för litet läge, mobiltelefon
+@media only screen and (max-width: 800px) {
+
+  h1 {
+    text-align: center;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    margin: 0 auto 0 auto;
+  }
+
+ article h2 {
+    padding-right: 5vw;
+    padding-left: 5vw;
+    padding-top: 2vh;
+    margin: 0 auto 0 auto;
+  }
+
+  p {
+    padding-right: 5vw;
+    padding-left: 5vw;
+    margin: 0 auto 0 auto;
+  }
+
+  #searchInput {
+    margin: 0 auto o auto;
+  }
+
+  #searchBtn {
+    margin: 0 auto 0 auto;
+  }
+
+  #weather {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    text-align: center;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    margin: 0 auto 0 auto;
+  }
+
+  article p {
+    padding-bottom: 2vh;
+    margin: 0 auto 0 auto;
+  }
+}
+
+// Visar en kolumn för mycket litet läge, mobiltelefon
+@media only screen and (max-width: 300px) {
+
+  #weather {
+    display: block;
+    text-align: center;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    margin: 0 auto 0 auto;
+  }
+}
