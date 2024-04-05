@@ -24,15 +24,7 @@ $primary-heading-darkm: $white;
 $primary-text-darkm: $white;
 $primary-text-article-darkm: $light-green;
 
-// Mixin
-@mixin circle ($width, $height, $color) {
-    width: $width;
-    height: $height;
-    background: $color;
-    border-radius: 50%;
-}
-
-// If-else sats
+// Mixin triangel med if/else-sats
 @mixin triangle($size, $color, $direction) {
 
     height: 0px;
@@ -45,7 +37,6 @@ $primary-text-article-darkm: $light-green;
     @if $direction ==up {
         border-bottom-color: $color;
     }
-
     @else if $direction ==down {
         border-top-color: $color;
     }
